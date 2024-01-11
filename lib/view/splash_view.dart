@@ -17,7 +17,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () => Get.off(const NewsView()));
+    Timer(const Duration(seconds: 2), () => Get.off(() => const NewsView()));
   }
 
   @override
