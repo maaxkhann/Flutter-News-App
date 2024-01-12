@@ -78,14 +78,13 @@ class NewsCategoryView extends StatelessWidget {
                                 .data!.articles![index].publishedAt
                                 .toString());
                             return Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  margin: const EdgeInsets.all(12),
+                                  margin: const EdgeInsets.all(10),
                                   width: Get.width * 0.3,
                                   height: Get.height * 0.18,
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(15),
+                                    borderRadius: BorderRadius.circular(12),
                                     child: CachedNetworkImage(
                                       imageUrl: snapshot
                                           .data!.articles![index].urlToImage
@@ -120,27 +119,33 @@ class NewsCategoryView extends StatelessWidget {
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                         const Spacer(),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Text(
-                                              snapshot.data!.articles![index]
-                                                  .source!.name
-                                                  .toString(),
-                                              style: GoogleFonts.poppins(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w600),
-                                            ),
-                                            Text(
-                                              newsCategoryViewModel.dateFormat
-                                                  .format(dateTime)
-                                                  .toString(),
-                                              style: GoogleFonts.poppins(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w500),
-                                            )
-                                          ],
+                                        FittedBox(
+                                          fit: BoxFit.fitWidth,
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                snapshot.data!.articles![index]
+                                                    .source!.name
+                                                    .toString(),
+                                                style: GoogleFonts.poppins(
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                              SizedBox(
+                                                width: Get.width * 0.04,
+                                              ),
+                                              Text(
+                                                newsCategoryViewModel.dateFormat
+                                                    .format(dateTime)
+                                                    .toString(),
+                                                style: GoogleFonts.poppins(
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
