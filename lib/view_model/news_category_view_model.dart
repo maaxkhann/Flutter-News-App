@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:news_app/model/news_category_model.dart';
 import 'package:news_app/repository/news_repository.dart';
 
@@ -13,6 +14,7 @@ class NewsCategoryViewModel with ChangeNotifier {
     'Technology'
   ];
   String? currentCategorySelected;
+  DateFormat dateFormat = DateFormat('MM dd yyyy');
 
   void setCategory(String currentCategorySelected) {
     this.currentCategorySelected = currentCategorySelected;
