@@ -23,9 +23,7 @@ class NewsCategoryView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: newsCategoryViewModel.categoryList.length,
                 itemBuilder: (context, index) {
-                  return InkWell(
-                    splashColor: Colors.blue,
-                    borderRadius: BorderRadius.circular(12),
+                  return GestureDetector(
                     onTap: () {
                       newsCategoryViewModel.setCategory(newsCategoryViewModel
                           .currentCategorySelected

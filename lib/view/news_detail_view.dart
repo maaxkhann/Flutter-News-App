@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/model/news_headlines_model.dart';
-import 'package:provider/provider.dart';
 
 class NewsDetailView extends StatelessWidget {
   final Articles newsDetail;
