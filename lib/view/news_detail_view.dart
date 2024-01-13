@@ -29,7 +29,9 @@ class NewsDetailView extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: CachedNetworkImage(
                 imageUrl: newsDetail.urlToImage.toString(),
-                placeholder: (context, url) => SpinKitFadingCircle(),
+                placeholder: (context, url) => const SpinKitFadingCircle(
+                  color: Colors.blue,
+                ),
                 errorWidget: (context, url, error) => const Icon(
                   Icons.error_outline,
                   color: Colors.red,
